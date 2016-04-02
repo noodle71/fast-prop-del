@@ -49,7 +49,7 @@ $ npm test
 
 ```bash
 $ npm install
-$ node --allow-natives-syntax performance.js
+$ node --allow-natives-syntax test/performance.js
 ```
 ---
 
