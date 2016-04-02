@@ -1,35 +1,11 @@
-var propDel = require("./");
+var propDel = require("../").propDel;
 
 function getLargeObj(){
   return {
     'a':'',
     'b':'',
     'c':'',
-    'd':'',
-    'e':'',
-    'f':'',
-    'g':'',
-    'h':'',
-    'i':'',
-    'j':'',
-    'k':'',
-    'l':'',
-    'm':'',
-    'n':'',
-    'a':'',
-    'o':'',
-    'p':'',
-    'q':'',
-    'r':'',
-    's':'',
-    't':'',
-    'u':'',
-    'v':'',
-    'w':'',
-    'x':'',
-    'y':'',
-    'z':'',
-    'zz': ''
+    'd':''
   };
 }
 
@@ -50,8 +26,10 @@ function test(iterations, obj, testName){
 var dictionary = getLargeObj();
 var fastProp = getLargeObj();
 var normalObject = getLargeObj();
-delete dictionary.zz;
-fastProp = propDel(fastProp,'zz');
+delete dictionary.d;
+propDel(fastProp,'d');
+
+console.info('Running performance test:');
 
 console.info(
   '\n',

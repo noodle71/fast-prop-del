@@ -2,6 +2,8 @@
 
 Fast property delete.
 
+With this library you can delete object properties and then turn the object to fast property mode. Aditionally, you can turn common objects to fast property mode or add new properties to an object forcing the object to be fast property mode.
+
 In v8 engine an object has two ways of representation:
 + Dictionary mode (also known as normalized objects)
 + Fast property mode
@@ -21,10 +23,10 @@ You can learn more:
 
 You can try the performance using as example performance.js
 
-+ Iterate dictionary: 260ms
-+ Iterate fastProp: 71ms
++ Iterate dictionary: 57ms
++ Iterate fastProp: 9ms
 
-Almost 4 times faster
+6 times faster!
 
 ---
 
@@ -53,11 +55,35 @@ $ node --allow-natives-syntax performance.js
 
 ## Usage
 
+### Remove property
+
 ```js
-propDel = require('fast-prop-del')
+propDel = require('fast-prop-del').propDel;
 
-propDel({'bar': 'foo'}, 'bar');
-// => {}
+var obj = {'bar': 'foo'};
+propDel(obj, 'bar');
+// obj => {}
 
-propDel(({'bar': {'foo': 'bar'}}).bar, 'foo');
-// => {'bar': null}
+var obj = {'bar': {'foo': 'bar'}};
+propDel(obj.bar, 'foo');
+// obj => {'bar': null}
+```
+
+### Turn object to fast properties
+
+```js
+propDel = require('fast-prop-del').turnToFastProp;
+
+var obj = {'bar': 'foo'};
+delete obj.bar;
+turnToFastProp(obj);
+```
+### Adding properties turning object to fast properties
+
+```js
+propAdd = require('fast-prop-del').propAdd;
+
+var obj = {'bar': 'foo'};
+propAdd(obj, 'bar2', 'foo2');
+// obj => {'bar': 'foo', 'bar2': 'foo2'}
+```

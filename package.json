@@ -4,11 +4,13 @@
   "description": "Remove an object property returning an object with fast properties",
   "main": "index.js",
   "scripts": {
-    "test": "node --allow-natives-syntax test.js"
+    "test": "node --allow-natives-syntax mochaRunner.js"
   },
   "devDependencies": {
     "chai": "*",
-    "mocha": "*"
+    "mocha": "*",
+    "fs": "*",
+    "path": "*"
   },
   "keywords": [
     "object",
