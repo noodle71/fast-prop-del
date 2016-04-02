@@ -1,6 +1,6 @@
 {
   "name": "fast-prop-del",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Remove an object property returning an object with fast properties",
   "main": "index.js",
   "scripts": {
