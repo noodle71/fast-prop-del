@@ -8,7 +8,7 @@ In v8 engine an object has two ways of representation:
 
 ### How do I know if an object is Dictionary or Fast property mode?
 
-When you use your object as if it was a hash table your object may turn to Dictionary mode. For example When you add several properties dinamically or when you delete a property.
+When you use your object as if it was a hash table your object may turn to dictionary mode. For example, when you add several properties dinamically or when you delete a property.
 
 This makes the object have worse performance inside for-in loops.
 
