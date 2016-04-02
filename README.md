@@ -21,8 +21,8 @@ You can learn more:
 
 You can try the performance using as example performance.js
 
-Iterate dictionary: 260ms
-Iterate fastProp: 71ms
++ Iterate dictionary: 260ms
++ Iterate fastProp: 71ms
 
 Almost 4 times faster
 

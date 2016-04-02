@@ -4,8 +4,7 @@
   "description": "Remove an object property returning an object with fast properties",
   "main": "index.js",
   "scripts": {
-    "test": "node --allow-natives-syntax test.js",
-    "perf": "node --allow-natives-syntax performance.js"
+    "test": "node --allow-natives-syntax test.js"
   },
   "devDependencies": {
     "chai": "*",
