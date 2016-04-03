@@ -1,6 +1,6 @@
 {
   "name": "fast-prop-del",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Remove/Add one or several object properties returning an object with fast properties.",
   "main": "index.js",
   "scripts": {
@@ -36,8 +36,5 @@
   "bugs": {
     "url": "https://github.com/noodle71/fast-prop-del/issues"
   },
-  "homepage": "https://github.com/noodle71/fast-prop-del#readme",
-  "dependencies": {
-    "chai": "^3.5.0"
-  }
+  "homepage": "https://github.com/noodle71/fast-prop-del#readme"
 }
