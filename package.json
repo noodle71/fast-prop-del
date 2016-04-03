@@ -1,7 +1,7 @@
 {
   "name": "fast-prop-del",
-  "version": "1.0.3",
-  "description": "Remove an object property returning an object with fast properties",
+  "version": "1.0.4",
+  "description": "Remove/Add one or several object properties returning an object with fast properties.",
   "main": "index.js",
   "scripts": {
     "test": "node --allow-natives-syntax mochaRunner.js"
@@ -10,14 +10,19 @@
     "chai": "*",
     "mocha": "*",
     "fs": "*",
-    "path": "*"
+    "path": "*",
+    "colors": "*"
   },
   "keywords": [
     "object",
     "property",
     "remove",
     "delete",
-    "performance"
+    "performance",
+    "addition",
+    "add",
+    "several",
+    "substract"
   ],
   "repository": {
     "url": "git+ssh://git@github.com/noodle71/fast-prop-del.git",

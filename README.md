@@ -12,7 +12,7 @@ In v8 engine an object has two ways of representation:
 
 When you use your object as if it was a hash table your object may turn to dictionary mode. For example, when you add several properties dinamically or when you delete a property.
 
-This makes the object have worse performance inside for-in loops.
+This makes the object have worse performance when you access an object property.
 
 You can learn more:
 + [ref 1](https://stackoverflow.com/questions/24987896/how-does-bluebirds-util-tofastproperties-function-make-an-objects-properties/24989927#24989927)
@@ -64,9 +64,40 @@ var obj = {'bar': 'foo'};
 propDel(obj, 'bar');
 // obj => {}
 
-var obj = {'bar': {'foo': 'bar'}};
+var obj = {
+  'bar': {
+    'foo': 'bar'
+  }
+};
 propDel(obj.bar, 'foo');
 // obj => {'bar': null}
+
+propDel(null, 'foo');
+// Error => Invalid object
+```
+
+### Remove several properties
+
+```js
+propDel = require('fast-prop-del').propDel;
+
+var obj = {
+  'a': 'a',
+  'b': 'b',
+  'c': 'c',
+  'd': 'd'
+};
+propDel(obj, ['a','b','c']);
+// obj => {'d': 'd'}
+
+var obj = {
+  'a': 'a',
+  'b': 'b',
+  'c': 'c',
+  'd': 'd'
+};
+propDel(obj, Object.keys(obj));
+// obj => {}
 ```
 
 ### Turn object to fast properties
@@ -78,7 +109,8 @@ var obj = {'bar': 'foo'};
 delete obj.bar;
 turnToFastProp(obj);
 ```
-### Adding properties turning object to fast properties
+
+### Adding one property to an object turning the object into fast properties mode
 
 ```js
 propAdd = require('fast-prop-del').propAdd;
@@ -86,4 +118,18 @@ propAdd = require('fast-prop-del').propAdd;
 var obj = {'bar': 'foo'};
 propAdd(obj, 'bar2', 'foo2');
 // obj => {'bar': 'foo', 'bar2': 'foo2'}
+```
+
+### Adding several properties to an object turning the object into fast properties mode
+
+```js
+propAdd = require('fast-prop-del').propAdd;
+
+var obj = {'bar': 'foo'};
+var objToMix = {
+  'a': 'a',
+  'b': 'b'
+};
+propAdd(obj, objToMix);
+// obj => {'bar': 'foo', 'a': 'a', 'b': 'b'}
 ```
