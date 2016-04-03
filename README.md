@@ -58,10 +58,11 @@ $ node --allow-natives-syntax test/performance.js
 ### Remove property
 
 ```js
-propDel = require('fast-prop-del').propDel;
+var propDel = require('fast-prop-del').propDel;
 
 var obj = {'bar': 'foo'};
 propDel(obj, 'bar');
+console.info(obj);
 // obj => {}
 
 var obj = {
@@ -70,6 +71,7 @@ var obj = {
   }
 };
 propDel(obj.bar, 'foo');
+console.info(obj);
 // obj => {'bar': null}
 
 propDel(null, 'foo');
@@ -79,7 +81,7 @@ propDel(null, 'foo');
 ### Remove several properties
 
 ```js
-propDel = require('fast-prop-del').propDel;
+var propDel = require('fast-prop-del').propDel;
 
 var obj = {
   'a': 'a',
@@ -88,6 +90,7 @@ var obj = {
   'd': 'd'
 };
 propDel(obj, ['a','b','c']);
+console.info(obj);
 // obj => {'d': 'd'}
 
 var obj = {
@@ -97,13 +100,14 @@ var obj = {
   'd': 'd'
 };
 propDel(obj, Object.keys(obj));
+console.info(obj);
 // obj => {}
 ```
 
-### Turn object to fast properties
+### Turn object into fast properties mode
 
 ```js
-propDel = require('fast-prop-del').turnToFastProp;
+var turnToFastProp = require('fast-prop-del').turnToFastProp;
 
 var obj = {'bar': 'foo'};
 delete obj.bar;
@@ -113,17 +117,18 @@ turnToFastProp(obj);
 ### Adding one property to an object turning the object into fast properties mode
 
 ```js
-propAdd = require('fast-prop-del').propAdd;
+var propAdd = require('fast-prop-del').propAdd;
 
 var obj = {'bar': 'foo'};
 propAdd(obj, 'bar2', 'foo2');
+console.info(obj);
 // obj => {'bar': 'foo', 'bar2': 'foo2'}
 ```
 
 ### Adding several properties to an object turning the object into fast properties mode
 
 ```js
-propAdd = require('fast-prop-del').propAdd;
+var propAdd = require('fast-prop-del').propAdd;
 
 var obj = {'bar': 'foo'};
 var objToMix = {
@@ -131,5 +136,6 @@ var objToMix = {
   'b': 'b'
 };
 propAdd(obj, objToMix);
+console.info(obj);
 // obj => {'bar': 'foo', 'a': 'a', 'b': 'b'}
 ```

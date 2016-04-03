@@ -1,6 +1,6 @@
 {
   "name": "fast-prop-del",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Remove/Add one or several object properties returning an object with fast properties.",
   "main": "index.js",
   "scripts": {
